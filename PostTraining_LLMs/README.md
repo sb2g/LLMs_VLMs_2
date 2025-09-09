@@ -1,0 +1,105 @@
+## Overview:
+- This repo has examples & concepts from [1] on how to perform Post-training oF LLMs using:
+    - Supervised Fine Tuning (SFT) 
+    - DPO (Direct Preference Optimization)
+    - GRPO (Group relative policy optimization)
+
+## Some notes on when to use each of them:
+- Pretraining
+    - Unlabeled data. (Text)
+    - Unsupervised learning
+    - Example dataset size: >> 2T tokens
+- Prompt engineering
+    - When?
+        - Follow few instructions
+    - Example use cases: 
+        - Do not discuss X
+- RAG
+    - When?
+        - Adapt to rapidly changing knowledge base
+    - Example use cases: 
+        - Query real-time knowledge base
+- Continual Pre-training + Post-training
+    - When?: 
+        - Inject large-scale domain knowledge (> 1B tokens)
+    - Example use cases: 
+        - Medical LLM, Cybersecurity LLM
+- Post-training
+    - When?: 
+        - Reliably change the model behavior
+    - Example use cases: 
+        - Follow 20+ instructions. Create reasoning model
+    - Types:
+        - SFT
+            - When? 
+                - Jump start or improve model capabilities
+            - Example use cases
+                - Pretraining to Instruct models
+                - Non-reasoning to reasoning models
+            - Labeled data.
+                - Prompt + Response pairs
+            - Supervised learning. Can be full finetuning or PEFT
+                - Minimize negative log likelihood
+            - How to get/curate data? 
+                - Knowledge distillation
+                - Best of K sampling
+                - Filtering
+                - Quality > Quantity
+            - Example dataset size: 
+                - ~1K-2B tokens
+        - DPO   
+            - When?
+                - Make small modifications to model responses
+                - Better than SFT due to constrative nature
+            - Example use cases
+                - Instruction following, Safety, Identity, Language
+            - Labeled data
+                - Prompt + GoodResponse + BadResponse tuples
+            - Supervised learning
+                - Minimize contrastive loss to encourage positive response. Cross-entropy loss on reward diff of reparametrized reward model. Be careful to avoid overfitting on wrong signal (like small response vs correct response)
+            - How to get/curate data? 
+                - Generate responses from LLM & make enhancements
+                - Generate multiple responses & use reward functions/humans to mark positive/negative
+            - Example dataset size: 
+                - ~1K-1B tokens 
+        - Online RL:
+            - Types of reward functions
+                - Trained reward model
+                    - Use large scale human / machine generated preference data
+                    - Good for improving chat & safety
+                    - Less accurate for correctness based domains like coding, math, func calling, etc. 
+                - Verifiable reward
+                    - Prepare GT data for math, unit tests for coding, sandbox execution env
+                    - More reliable than reward model in these domains
+                    - Used for training reasoning models
+        - GRPO
+            - This is an Online RL solution 
+                - Does not need a trained reward model. Well-suited for binary (correctness-based) reward
+                - Requires larger number of samples than PPO
+                - Requires lesser GPU memory than PPO (no value model)
+            - Labeled data. 
+                - Prompt + Reward function
+            - Supervised learning
+            - How to get/curate data? 
+                - See "Online RL: Verifiable reward" section
+            - Example dataset size
+                - ~1K-10M prompts
+        - PPO
+            - This is also an Online RL solution. 
+                - Needs a trained value model. Works well with binary reward or reward model
+                - More sample efficient than GRPO
+                - Requires more GPU memory than GRPO
+
+## Post-training requires:
+- Data & Algo co-design
+    - SFT, DPO, GRPO, PPO, etc.
+- Reliable & Efficient libraries
+    - HF TRL, OpenRLHF, veRL, NemoRL, etc.
+- Appropriate Eval suite
+    - Human chat preferences: Chatbot Arena
+    - LLM as judge for chat: Alpaca Eval, Arena Hard V1/V2
+    - Instruct LLM: LivecodeBench, AIME 24/25, MMLU Pro
+    - Function calling & Agent: TAuBEnch, ToolSandbox
+
+# Reference:
+1. https://learn.deeplearning.ai/courses/post-training-of-llms/
