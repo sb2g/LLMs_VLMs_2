@@ -6,7 +6,7 @@ This repo is a continuation of my repo https://github.com/sb2g/LLMs_VLMs_1.
     - Covers more concepts & code examples/projects/applications around SLMs, LLMs and VLMs listed below.
  
 ## Key directories here (so far.):
-- Pre-training LLMs (continuing pre-training before fine-tuning)
+- Pre-training LLMs (using huggingface)
 - Post-training LLMs (SFT, GPO, DRPO)
 - Distillation
 - Quantization
