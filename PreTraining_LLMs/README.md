@@ -13,17 +13,17 @@
 
 ## Important images:
 - Data Cleanup   
-    <img src="images/2_DataCleanup.png" alt="drawing" width="200"/>
+    <img src="images/2_DataCleanup.png" alt="drawing" width="300"/>
 - Data Quality      
-    <img src="images/2_DataQuality.png" alt="drawing" width="200"/>
+    <img src="images/2_DataQuality.png" alt="drawing" width="300"/>
 - Data Packing   
-    <img src="images/3_DataPacking.png" alt="drawing" width="200"/>
+    <img src="images/3_DataPacking.png" alt="drawing" width="300"/>
 - Model Depth Upscaling   
-    <img src="images/4_Model_DepthUpscaling.png" alt="drawing" width="200"/>
+    <img src="images/4_Model_DepthUpscaling.png" alt="drawing" width="300"/>
 - Model Training loop   
-    <img src="images/5_Model_TrainingLoop.png" alt="drawing" width="200"/>
+    <img src="images/5_Model_TrainingLoop.png" alt="drawing" width="300"/>
 - LLM benchmarks   
-    <img src="images/6_LLM_Benchmarks.png" alt="drawing" width="200"/>
+    <img src="images/6_LLM_Benchmarks.png" alt="drawing" width="300"/>
 
 ## Reference:
 1. https://learn.deeplearning.ai/courses/pretraining-llms/
