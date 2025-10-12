@@ -12,18 +12,18 @@
 6. Standard evaluation methods
 
 ## Important images:
-- Data Cleaup
-    ![Image](images/2_DataCleanup.png)
-- Data Quality
-    ![Image](images/2_DataQuality.png)
-- Data Packing
-    ![Image](images/3_DataPacking.png)
-- Model Depth Upscaling
-    ![Image](images/4_Model_DepthUpscaling.png)
-- Model Training loop
-    ![Image](images/5_Model_TrainingLoop.png)
-- LLM benchmarks
-    ![Image](images/6_LLM_Benchmarks.png)
+- Data Cleanup   
+    <img src="images/2_DataCleanup.png" alt="drawing" width="200"/>
+- Data Quality      
+    <img src="images/2_DataQuality.png" alt="drawing" width="200"/>
+- Data Packing   
+    <img src="images/3_DataPacking.png" alt="drawing" width="200"/>
+- Model Depth Upscaling   
+    <img src="images/4_Model_DepthUpscaling.png" alt="drawing" width="200"/>
+- Model Training loop   
+    <img src="images/5_Model_TrainingLoop.png" alt="drawing" width="200"/>
+- LLM benchmarks   
+    <img src="images/6_LLM_Benchmarks.png" alt="drawing" width="200"/>
 
 ## Reference:
 1. https://learn.deeplearning.ai/courses/pretraining-llms/
