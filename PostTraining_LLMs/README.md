@@ -1,5 +1,6 @@
 ## Overview:
-- This repo has examples & concepts from [1] on how to perform Post-training oF LLMs using:
+- This repo covers some techniques & concepts on Post-training of LLMs, along with my example notebooks from https://learn.deeplearning.ai/courses/post-training-of-llms/.
+- It focuses on using Huggingface library to perform following fine-tunings:
     - Supervised Fine Tuning (SFT) 
     - DPO (Direct Preference Optimization)
     - GRPO (Group relative policy optimization)
